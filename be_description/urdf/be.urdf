@@ -110,6 +110,701 @@ work original in ucs-ros-pkg.
   <material name="TopBlack">
     <color rgba="0.038 0.038 0.038 1.0"/>
   </material>
+  <!-- ros_control plugin -->
+  <gazebo>
+    <plugin filename="libgazebo_ros_control.so" name="gazebo_ros_control">
+      <robotNamespace>/cyton_gamma_300</robotNamespace>
+      <robotSimType>gazebo_ros_control/DefaultRobotHWSim</robotSimType>
+    </plugin>
+  </gazebo>
+  <gazebo>
+    <plugin filename="libgazebo_ros_joint_pose_trajectory.so" name="gazebo_ros_joint_trajectory">
+      <robotNamespace>/cyton_gamma_300</robotNamespace>
+      <alwaysOn>true</alwaysOn>
+      <updateRate>100.0</updateRate>
+    </plugin>
+  </gazebo>
+  <gazebo>
+    <plugin filename="libgazebo_ros_joint_state_publisher.so" name="gazebo_ros_joint_state_publisher">
+      <robotNamespace>/cyton_gamma_300</robotNamespace>
+      <alwaysOn>true</alwaysOn>
+      <updateRate>100.0</updateRate>
+    </plugin>
+  </gazebo>
+  <gazebo>
+    <plugin filename="libgazebo_mimic_joint_plugin.so" name="gazebo_mimic_joint_plugin">
+      <robotNamespace>/cyton_gamma_300</robotNamespace>
+      <joint>gripper_finger1_joint</joint>
+      <mimicJoint>gripper_finger2_joint</mimicJoint>
+      <multiplier>-1.0</multiplier>
+    </plugin>
+  </gazebo>
+  <!-- Base of robot here -->
+  <!-- ########################################### -->
+  <!-- #######! Base Link !####################### -->
+  <!-- ########################################### -->
+  <gazebo reference="cyton_base_link">
+    <selfCollide>true</selfCollide>
+    <material>Gazebo/Grey</material>
+  </gazebo>
+  <!-- First motor located here -->
+  <!-- ########################################### -->
+  <!-- #######! Shoulder Roll Joint !############# -->
+  <!-- ########################################### -->
+  <gazebo reference="shoulder_roll_joint">
+    <material>Gazebo/Grey</material>
+  </gazebo>
+  <!-- ########################################### -->
+  <!-- #######! Shoulder Roll Link !############## -->
+  <!-- ########################################### -->
+  <gazebo reference="shoulder_roll">
+    <selfCollide>true</selfCollide>
+    <material>Gazebo/Grey</material>
+  </gazebo>
+  <!-- Second motor located here -->
+  <!-- ########################################### -->
+  <!-- #######! Shoulder Pitch Joint !############ -->
+  <!-- ########################################### -->
+  <gazebo reference="shoulder_pitch_joint">
+    <material>Gazebo/Black</material>
+  </gazebo>
+  <!-- ########################################### -->
+  <!-- #######! Shoulder Pitch Link !############# -->
+  <!-- ########################################### -->
+  <gazebo reference="shoulder_pitch">
+    <selfCollide>true</selfCollide>
+    <material>Gazebo/Grey</material>
+  </gazebo>
+  <!-- Third motor located here -->
+  <!-- ########################################### -->
+  <!-- #######! Elbow Roll Joint !################ -->
+  <!-- ########################################### -->
+  <gazebo reference="elbow_roll_joint">
+    <material>Gazebo/Grey</material>
+  </gazebo>
+  <!-- ########################################### -->
+  <!-- #######! Elbow Roll Link !################# -->
+  <!-- ########################################### -->
+  <gazebo reference="elbow_roll">
+    <selfCollide>true</selfCollide>
+    <material>Gazebo/Grey</material>
+  </gazebo>
+  <!-- Fourth motor located here -->
+  <!-- ########################################### -->
+  <!-- #######! Elbow Pitch Joint !############### -->
+  <!-- ########################################### -->
+  <gazebo reference="elbow_pitch_joint">
+    <material>Gazebo/Grey</material>
+  </gazebo>
+  <!-- ########################################### -->
+  <!-- #######! Elbow Pitch Link !################ -->
+  <!-- ########################################### -->
+  <gazebo reference="elbow_pitch">
+    <selfCollide>true</selfCollide>
+    <material>Gazebo/Grey</material>
+  </gazebo>
+  <!-- Fifth motor located here -->
+  <!-- ########################################### -->
+  <!-- #######! Elbow Yaw Joint !################# -->
+  <!-- ########################################### -->
+  <gazebo reference="elbow_yaw_joint">
+    <material>Gazebo/Grey</material>
+  </gazebo>
+  <!-- ########################################### -->
+  <!-- #######! Elbow Yaw Link !################## -->
+  <!-- ########################################### -->
+  <gazebo reference="elbow_yaw">
+    <selfCollide>true</selfCollide>
+    <material>Gazebo/Grey</material>
+  </gazebo>
+  <!-- Sixth motor located here -->
+  <!-- ########################################### -->
+  <!-- #######! Wrist Pitch Joint !############### -->
+  <!-- ########################################### -->
+  <gazebo reference="wrist_pitch_joint">
+    <material>Gazebo/Grey</material>
+  </gazebo>
+  <!-- ########################################### -->
+  <!-- #######! Wrist Pitch Link !################ -->
+  <!-- ########################################### -->
+  <gazebo reference="wrist_pitch">
+    <selfCollide>true</selfCollide>
+    <material>Gazebo/Grey</material>
+  </gazebo>
+  <!-- Seventh motor located here -->
+  <!-- ########################################### -->
+  <!-- #######! Wrist Roll Joint !################ -->
+  <!-- ########################################### -->
+  <gazebo reference="wrist_roll_joint">
+    <material>Gazebo/Grey</material>
+  </gazebo>
+  <!-- ########################################### -->
+  <!-- #######! Wrist Roll Link !################# -->
+  <!-- ########################################### -->
+  <gazebo reference="wrist_roll">
+    <selfCollide>true</selfCollide>
+    <material>Gazebo/Grey</material>
+  </gazebo>
+  <!-- Eigth motor located here -->
+  <!-- ########################################### -->
+  <!-- #######! Gripper Finger1 Joint !########### -->
+  <!-- ########################################### -->
+  <gazebo reference="gripper_finger1_joint">
+    <material>Gazebo/Grey</material>
+  </gazebo>
+  <!-- ########################################### -->
+  <!-- #######! Gripper Finger1 Link !############ -->
+  <!-- ########################################### -->
+  <gazebo reference="gripper_finger1">
+    <selfCollide>true</selfCollide>
+    <material>Gazebo/Grey</material>
+  </gazebo>
+  <!-- Eighth motor located here -->
+  <!-- ########################################### -->
+  <!-- #######! Gripper Finger2 Joint !########### -->
+  <!-- ########################################### -->
+  <gazebo reference="gripper_finger2_joint">
+    <material>Gazebo/Grey</material>
+  </gazebo>
+  <!-- ########################################### -->
+  <!-- #######! Gripper Finger2 Link !############ -->
+  <!-- ########################################### -->
+  <gazebo reference="gripper_finger2">
+    <selfCollide>true</selfCollide>
+    <material>Gazebo/Grey</material>
+  </gazebo>
+  <material name="black">
+    <color rgba="0.0 0.0 0.0 1.0"/>
+  </material>
+  <material name="blue">
+    <color rgba="0.0 0.0 0.8 1.0"/>
+  </material>
+  <material name="green">
+    <color rgba="0.0 0.8 0.0 1.0"/>
+  </material>
+  <material name="grey">
+    <color rgba="0.2 0.2 0.2 1.0"/>
+  </material>
+  <material name="orange">
+    <color rgba="1.0 0.423529411765 0.0392156862745 1.0"/>
+  </material>
+  <material name="brown">
+    <color rgba="0.870588235294 0.811764705882 0.764705882353 1.0"/>
+  </material>
+  <material name="red">
+    <color rgba="0.8 0.0 0.0 1.0"/>
+  </material>
+  <material name="white">
+    <color rgba="1.0 1.0 1.0 1.0"/>
+  </material>
+  <!-- Base of robot here -->
+  <!-- ########################################### -->
+  <!-- #######! Base Link !####################### -->
+  <!-- ########################################### -->
+  <link name="cyton_base_link">
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://cyton_gamma_300_description/meshes/gamma_base.dae"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0.0 0.0"/>
+      <geometry>
+        <mesh filename="package://cyton_gamma_300_description/meshes/gamma_base.dae"/>
+      </geometry>
+    </collision>
+    <!-- Added for Gazebo simulation -->
+    <!-- The inertia values are 'guessed' -->
+    <inertial>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <mass value="9"/>
+      <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
+    </inertial>
+  </link>
+  <!-- ########################################### -->
+  <!-- #######! End of Base Link !################ -->
+  <!-- ########################################### -->
+  <!-- First motor located here -->
+  <!-- ########################################### -->
+  <!-- #######! Shoulder Roll: joint & link !##### -->
+  <!-- ########################################### -->
+  <joint name="shoulder_roll_joint" type="revolute">
+    <parent link="cyton_base_link"/>
+    <child link="shoulder_roll"/>
+    <origin rpy="0 0 1.2" xyz="0 0 0.05315"/>
+    <limit effort="100.0" lower="-3.9" upper="1.5" velocity="1.0"/>
+    <axis xyz="0 0 1"/>
+  </joint>
+  <link name="shoulder_roll">
+    <visual>
+      <origin rpy="1.5708 0 3.14159" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://cyton_gamma_300_description/meshes/Shoulder_Roll.dae"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin rpy="1.5708 0 3.14159" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://cyton_gamma_300_description/meshes/Shoulder_Roll.dae"/>
+      </geometry>
+    </collision>
+    <!-- Added for Gazebo simulation -->
+    <!-- The inertia values are 'guessed' -->
+    <inertial>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <mass value="1"/>
+      <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
+    </inertial>
+  </link>
+  <!-- ########################################### -->
+  <!-- #######! End of Shoulder Roll !############ -->
+  <!-- ########################################### -->
+  <!-- Second motor located here -->
+  <!-- ########################################### -->
+  <!-- #######! Shoulder Pitch: joint & link !#### -->
+  <!-- ########################################### -->
+  <joint name="shoulder_pitch_joint" type="revolute">
+    <parent link="shoulder_roll"/>
+    <child link="shoulder_pitch"/>
+    <origin rpy="1.2 0 0" xyz="0 0 0.063"/>
+    <limit effort="100.0" lower="-2.6" upper="0.2" velocity="1.0"/>
+    <axis xyz="1 0 0"/>
+  </joint>
+  <link name="shoulder_pitch">
+    <visual>
+      <origin rpy="0 1.5708 0" xyz="0.028 0 0"/>
+      <geometry>
+        <mesh filename="package://cyton_gamma_300_description/meshes/Shoulder_Pitch.dae"/>
+      </geometry>
+    </visual>
+    <collision>
+      <!-- <origin xyz="-0.001 0.064 0.1745"/> -->
+      <origin rpy="0 1.5708 0" xyz="0.028 0 0"/>
+      <geometry>
+        <!-- <box size="0.0709 0.19363 0.083"/> -->
+        <mesh filename="package://cyton_gamma_300_description/meshes/Shoulder_Pitch.dae"/>
+      </geometry>
+    </collision>
+    <!-- Added for Gazebo simulation -->
+    <!-- The inertia values are 'guessed' -->
+    <inertial>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <mass value="1"/>
+      <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
+    </inertial>
+  </link>
+  <!-- ########################################### -->
+  <!-- #######! End of Shoulder Pitch !########### -->
+  <!-- ########################################### -->
+  <!-- Third motor located here -->
+  <!-- ########################################### -->
+  <!-- #######! Elbow Roll: joint & link !######## -->
+  <!-- ########################################### -->
+  <joint name="elbow_roll_joint" type="revolute">
+    <parent link="shoulder_pitch"/>
+    <child link="elbow_roll"/>
+    <origin rpy="0 0 1.2" xyz="0 0 0.089"/>
+    <limit effort="100.0" lower="-3.8" upper="1.4" velocity="1.0"/>
+    <axis xyz="0 0 1"/>
+  </joint>
+  <link name="elbow_roll">
+    <visual>
+      <origin rpy="0 0 3.92699" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://cyton_gamma_300_description/meshes/Elbow_Roll.dae"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin rpy="0 0 3.92699" xyz="0 0 0"/>
+      <!-- <origin xyz="-0.0225 0.039 0.3068"/> -->
+      <geometry>
+        <!-- <box size="0.0717 0.1846 0.0756"/> -->
+        <mesh filename="package://cyton_gamma_300_description/meshes/Elbow_Roll.dae"/>
+      </geometry>
+    </collision>
+    <!-- Added for Gazebo simulation -->
+    <!-- The inertia values are 'guessed' -->
+    <inertial>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <mass value="1"/>
+      <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
+    </inertial>
+  </link>
+  <!-- ########################################### -->
+  <!-- #######! End of Elbow Roll !############### -->
+  <!-- ########################################### -->
+  <!-- Fourth motor located here -->
+  <!-- ########################################### -->
+  <!-- #######! Elbow Pitch: joint & link !####### -->
+  <!-- ########################################### -->
+  <joint name="elbow_pitch_joint" type="revolute">
+    <parent link="elbow_roll"/>
+    <child link="elbow_pitch"/>
+    <origin rpy="1.2 0 0" xyz="0 0 0.052"/>
+    <limit effort="100.0" lower="-3.2" upper="0.8" velocity="1.0"/>
+    <axis xyz="1 0 0"/>
+  </joint>
+  <link name="elbow_pitch">
+    <visual>
+      <!-- Not sure if this is the correct orientation. -->
+      <origin rpy="1.5708 0 1.5708" xyz="0.027 0 0"/>
+      <geometry>
+        <mesh filename="package://cyton_gamma_300_description/meshes/Elbow_Pitch.dae"/>
+      </geometry>
+    </visual>
+    <collision>
+      <!-- Not sure if this is the correct orientation. -->
+      <origin rpy="1.5708 0 1.5708" xyz="0.027 0 0"/>
+      <!-- <origin xyz="0.0346 0.0461 0.4228"/> -->
+      <geometry>
+        <!-- <box size="0.0549 0.1557 0.076"/> -->
+        <mesh filename="package://cyton_gamma_300_description/meshes/Elbow_Pitch.dae"/>
+      </geometry>
+    </collision>
+    <!-- Added for Gazebo simulation -->
+    <!-- The inertia values are 'guessed' -->
+    <inertial>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <mass value="1"/>
+      <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
+    </inertial>
+  </link>
+  <!-- ########################################### -->
+  <!-- #######! End of Elbow Pitch !############## -->
+  <!-- ########################################### -->
+  <!-- Fifth motor located here -->
+  <!-- ########################################### -->
+  <!-- #######! Elbow Yaw: joint & link !######### -->
+  <!-- ########################################### -->
+  <joint name="elbow_yaw_joint" type="revolute">
+    <parent link="elbow_pitch"/>
+    <child link="elbow_yaw"/>
+    <origin rpy="0 -1.2 0" xyz="0 0 0.072"/>
+    <limit effort="100.0" lower="-3.2" upper="0.8" velocity="1.0"/>
+    <axis xyz="0 -1 0"/>
+  </joint>
+  <link name="elbow_yaw">
+    <visual>
+      <origin rpy="1.5708 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://cyton_gamma_300_description/meshes/Elbow_Yaw.dae"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin rpy="1.5708 0 0" xyz="0 0 0"/>
+      <!-- <origin xyz="0.0172 0.0209 0.516"/> -->
+      <geometry>
+        <!-- <box size="0.0535 0.1160 0.0402"/> -->
+        <mesh filename="package://cyton_gamma_300_description/meshes/Elbow_Yaw.dae"/>
+      </geometry>
+    </collision>
+    <!-- Added for Gazebo simulation -->
+    <!-- The inertia values are 'guessed' -->
+    <inertial>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <mass value="1"/>
+      <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
+    </inertial>
+  </link>
+  <!-- ########################################### -->
+  <!-- #######! End of Elbow Yaw !################ -->
+  <!-- ########################################### -->
+  <!-- Sixth motor located here -->
+  <!-- ########################################### -->
+  <!-- #######! Wrist Pitch: joint & link !####### -->
+  <!-- ########################################### -->
+  <joint name="wrist_pitch_joint" type="revolute">
+    <parent link="elbow_yaw"/>
+    <child link="wrist_pitch"/>
+    <origin rpy="1.2 0 0" xyz="0 0 0.0718"/>
+    <limit effort="100.0" lower="-3.1" upper="0.8" velocity="1.0"/>
+    <axis xyz="1 0 0"/>
+  </joint>
+  <link name="wrist_pitch">
+    <visual>
+      <origin rpy="1.5708 0 1.5708" xyz="0.027 0 0"/>
+      <geometry>
+        <mesh filename="package://cyton_gamma_300_description/meshes/Wrist_Pitch.dae"/>
+      </geometry>
+    </visual>
+    <collision>
+      <!-- <origin xyz="0.0257 0.0118 0.5617"/> -->
+      <origin rpy="1.5708 0 1.5708" xyz="0.027 0 0"/>
+      <geometry>
+        <mesh filename="package://cyton_gamma_300_description/meshes/Wrist_Pitch.dae"/>
+        <!-- <box size="0.026 0.0435 0.05185"/> -->
+      </geometry>
+    </collision>
+    <!-- Added for Gazebo simulation -->
+    <!-- The inertia values are 'guessed' -->
+    <inertial>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <mass value="1"/>
+      <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
+    </inertial>
+  </link>
+  <!-- ########################################### -->
+  <!-- #######! End of Wrist Pitch !############## -->
+  <!-- ########################################### -->
+  <!-- Seventh motor located here -->
+  <!-- ########################################### -->
+  <!-- #######! Wrist Roll: joint & link !######## -->
+  <!-- ########################################### -->
+  <joint name="wrist_roll_joint" type="revolute">
+    <parent link="wrist_pitch"/>
+    <child link="wrist_roll"/>
+    <origin rpy="0 0 1.2" xyz="0 0 0.051425"/>
+    <limit effort="100.0" lower="-3.8" upper="1.4" velocity="1.0"/>
+    <axis xyz="0 0 1"/>
+  </joint>
+  <link name="wrist_roll">
+    <visual>
+      <origin rpy="0 3.14159 1.5708" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://cyton_gamma_300_description/meshes/Wrist_Roll.dae"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin rpy="0 3.14159 1.5708" xyz="0 0 0"/>
+      <!-- <origin xyz="-0.0063 -0.0014 0.6102"/> -->
+      <geometry>
+        <!-- <box size="0.0518 0.0723 0.1004"/> -->
+        <mesh filename="package://cyton_gamma_300_description/meshes/Wrist_Roll.dae"/>
+      </geometry>
+    </collision>
+    <!-- Added for Gazebo simulation -->
+    <!-- The inertia values are 'guessed' -->
+    <inertial>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <mass value="1"/>
+      <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
+    </inertial>
+  </link>
+  <!-- ########################################### -->
+  <!-- #######! End of Wrist Roll !############### -->
+  <!-- ########################################### -->
+  <!-- Eigth motor located here -->
+  <!-- ########################################### -->
+  <!-- #######! Gripper Finger 1: joint & link !## -->
+  <!-- ########################################### -->
+  <joint name="gripper_finger1_joint" type="prismatic">
+    <parent link="wrist_roll"/>
+    <child link="gripper_finger1"/>
+    <origin rpy="0 0 0" xyz="-0.01331 0.00485 0.077225"/>
+    <limit effort="100.0" lower="-0.008" upper="0.008" velocity="1.0"/>
+    <axis xyz="1 0 0"/>
+  </joint>
+  <link name="gripper_finger1">
+    <visual>
+      <origin xyz="-0.0005 -0.0097 -0.031"/>
+      <geometry>
+        <mesh filename="package://cyton_gamma_300_description/meshes/Gripper_Finger1.dae"/>
+      </geometry>
+    </visual>
+    <collision>
+      <!-- <origin xyz="-0.0167 0.0172 0.7254"/> -->
+      <origin xyz="-0.0005 -0.0097 -0.031"/>
+      <geometry>
+        <!-- <box size="0.015 0.0229 0.0475"/> -->
+        <mesh filename="package://cyton_gamma_300_description/meshes/Gripper_Finger1.dae"/>
+      </geometry>
+    </collision>
+    <!-- Added for Gazebo simulation -->
+    <!-- The inertia values are 'guessed' -->
+    <inertial>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <mass value="0.5"/>
+      <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
+    </inertial>
+  </link>
+  <!-- ########################################### -->
+  <!-- #######! End of Gripper Finger 1 !######### -->
+  <!-- ########################################### -->
+  <!-- Eighth motor located here -->
+  <!-- ########################################### -->
+  <!-- #######! Gripper Finger 2: joint & link !## -->
+  <!-- ########################################### -->
+  <joint name="gripper_finger2_joint" type="prismatic">
+    <parent link="wrist_roll"/>
+    <child link="gripper_finger2"/>
+    <origin rpy="0 0 0" xyz="0.0098 0.00485 0.077225"/>
+    <limit effort="100.0" lower="-0.008" upper="0.008" velocity="1.0"/>
+    <mimic joint="gripper_finger1_joint" multiplier="-1"/>
+    <axis xyz="1 0 0"/>
+  </joint>
+  <link name="gripper_finger2">
+    <visual>
+      <origin xyz="0.0005 -0.0097 -0.031"/>
+      <geometry>
+        <mesh filename="package://cyton_gamma_300_description/meshes/Gripper_Finger2.dae"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0.0005 -0.0097 -0.031"/>
+      <geometry>
+        <mesh filename="package://cyton_gamma_300_description/meshes/Gripper_Finger2.dae"/>
+        <!-- <box size="0.015 0.0229 0.0475"/> -->
+      </geometry>
+    </collision>
+    <!-- Added for Gazebo simulation -->
+    <!-- The inertia values are 'guessed' -->
+    <inertial>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <mass value="0.5"/>
+      <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
+    </inertial>
+  </link>
+  <!-- ########################################### -->
+  <!-- #######! End of Gripper Finger 2 !######### -->
+  <!-- ########################################### -->
+  <!-- virtual end-effector -->
+  <!-- ########################################### -->
+  <!-- ####! Virtual Endeffector: joint & link !## -->
+  <!-- ########################################### -->
+  <joint name="virtual_endeffector_joint" type="fixed">
+    <parent link="wrist_roll"/>
+    <child link="virtual_endeffector"/>
+    <origin rpy="0 0 0" xyz="-0.002316 0.0079 0.079425"/>
+  </joint>
+  <link name="virtual_endeffector">
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <sphere radius="0.01"/>
+      </geometry>
+      <material name="grey">
+        <color rgba="0.2 0.2 0.2 0.4"/>
+      </material>
+    </visual>
+    <!-- Added for Gazebo simulation -->
+    <!-- The inertia values are 'guessed' -->
+    <inertial>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <mass value="0.03"/>
+      <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
+    </inertial>
+  </link>
+  <!-- ########################################### -->
+  <!-- #####! End of Virtual Endeffector !######## -->
+  <!-- ########################################### -->
+  <!-- ########################################### -->
+  <!-- #! Shoulder Roll: Transmission Interface !# -->
+  <!-- ########################################### -->
+  <transmission name="trans_shoulder_roll">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="shoulder_roll_joint">
+      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="shoulder_roll_motor">
+      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <!-- ########################################### -->
+  <!-- #! Shoulder Pitch: Transmission Interface ! -->
+  <!-- ########################################### -->
+  <transmission name="trans_shoulder_pitch">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="shoulder_pitch_joint">
+      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="shoulder_pitch_motor">
+      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <!-- ########################################### -->
+  <!-- #! Elbow Roll: Transmission Interface !#### -->
+  <!-- ########################################### -->
+  <transmission name="trans_elbow_roll">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="elbow_roll_joint">
+      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="elbow_roll_motor">
+      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <!-- ########################################### -->
+  <!-- #! Elbow Pitch: Transmission Interface !### -->
+  <!-- ########################################### -->
+  <transmission name="trans_elbow_pitch">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="elbow_pitch_joint">
+      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="elbow_pitch_motor">
+      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <!-- ########################################### -->
+  <!-- #! Elbow Yaw: Transmission Interface !##### -->
+  <!-- ########################################### -->
+  <transmission name="trans_elbow_yaw">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="elbow_yaw_joint">
+      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="elbow_yaw_motor">
+      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <!-- ########################################### -->
+  <!-- #! Wrist Pitch: Transmission Interface !### -->
+  <!-- ########################################### -->
+  <transmission name="trans_wrist_pitch">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="wrist_pitch_joint">
+      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="wrist_pitch_motor">
+      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <!-- ########################################### -->
+  <!-- #! Wrist Roll: Transmission Interface !#### -->
+  <!-- ########################################### -->
+  <transmission name="trans_wrist_roll">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="wrist_roll_joint">
+      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="wrist_roll_motor">
+      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <!-- ########################################### -->
+  <!-- #! Gripper Finger1: Transmission Interface  -->
+  <!-- ########################################### -->
+  <transmission name="trans_gripper_finger1">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="gripper_finger1_joint">
+      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="gripper_finger1_motor">
+      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <!-- ########################################### -->
+  <!-- #! Gripper Finger2: Transmission Interface  -->
+  <!-- ########################################### -->
+  <!-- <transmission name="trans_gripper_finger2"> -->
+  <!-- <type>transmission_interface/SimpleTransmission</type> -->
+  <!-- <joint name="gripper_finger2_joint"> -->
+  <!-- <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface> -->
+  <!-- </joint> -->
+  <!-- <actuator name="gripper_finger2_motor"> -->
+  <!-- <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface> -->
+  <!-- <mechanicalReduction>1</mechanicalReduction> -->
+  <!-- </actuator> -->
+  <!-- </transmission> -->
   <!-- chassis -->
   <link name="base_link">
     <inertial>
@@ -425,5 +1120,11 @@ work original in ucs-ros-pkg.
     <origin rpy="0 0 0" xyz="0.109 0 0.209"/>
     <parent link="base_link"/>
     <child link="front_sonar"/>
+  </joint>
+  <!-- Connect arm to base -->
+  <joint name="cyton_gamma_300" type="fixed">
+    <parent link="base_link"/>
+    <child link="cyton_base_link"/>
+    <origin rpy="0 0 0" xyz="0.08 0 0.24"/>
   </joint>
 </robot>

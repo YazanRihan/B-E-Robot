@@ -27,7 +27,11 @@ work original in ucs-ros-pkg.
 	<xacro:include filename="$(find be_description)/urdf/be.gazebo" />
 	<!-- import the pioneer 3dx's wheels -->
 	<xacro:include filename="$(find p3dx_description)/urdf/pioneer3dx_wheel.xacro" />
+	<!-- import the materials -->
 	<xacro:include filename="$(find be_description)/urdf/materials.xacro" />
+	<!-- import cyton_gamma_300-->
+	<xacro:include filename="$(find be_description)/urdf/cyton_gamma_300.urdf.xacro" />
+
 	<!-- chassis -->
 
 	<link name="base_link">
@@ -197,5 +201,12 @@ work original in ucs-ros-pkg.
 		<parent link="base_link" />
 		<child link="front_sonar" />
 	</joint>
+
+	<!-- Connect arm to base -->
+  <joint name="cyton_gamma_300" type="fixed">
+    <parent link="base_link" />
+    <child link="cyton_base_link" />
+    <origin xyz="0.08 0 0.24" rpy="0 0 0" />
+  </joint>
 	
 </robot>

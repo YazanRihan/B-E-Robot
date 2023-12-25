@@ -9,6 +9,7 @@ find_package(catkin REQUIRED COMPONENTS
   urdf
   xacro
   p3dx_description
+  cyton_gamma_300_description
 )
 
 ## System dependencies are found with CMake's conventions
