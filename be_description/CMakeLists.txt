@@ -8,8 +8,8 @@ find_package(catkin REQUIRED COMPONENTS
   rospy
   urdf
   xacro
-  p3dx_description
-  cyton_gamma_300_description
+  p3dx_robot
+  p3dx_cyton1500_fusion
 )
 
 ## System dependencies are found with CMake's conventions

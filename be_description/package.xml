@@ -22,14 +22,14 @@
   <build_depend>rospy</build_depend>
   <build_depend>xacro</build_depend>
   <build_depend>urdf</build_depend>
-  <build_depend>p3dx_description</build_depend>
-  <build_depend>cyton_gamma_300_description</build_depend>
+  <build_depend>p3dx_robot</build_depend>
+  <build_depend>p3dx_cyton1500_fusion</build_depend>
 
   <exec_depend>roscpp</exec_depend>
   <exec_depend>rospy</exec_depend>
   <exec_depend>urdf</exec_depend>
   <exec_depend>xacro</exec_depend>
-  <exec_depend>p3dx_description</exec_depend>
-  <exec_depend>cyton_gamma_300_description</exec_depend>
+  <exec_depend>p3dx_robot</exec_depend>
+  <exec_depend>p3dx_cyton1500_fusion</exec_depend>
 
 </package>
