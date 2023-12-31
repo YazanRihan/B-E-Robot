@@ -3,7 +3,7 @@
 	<arg name="robot_name" default="be" />
   <arg name="base_name" default="p3dx_base"/>
   <arg name="arm_name" default="cyton1500_arm"/>
-  <arg name="robot_position" default="-x 0.0 -y 0.0 -z 0.01" />
+  <arg name="robot_position" default="-x 0.0 -y -0.5 -z 0.189795 -R 0 -P 0 -Y -1.571593" />
 
   <!--group ns="$(arg robot_name)"-->
 		<!-- LOAD MODEL -->

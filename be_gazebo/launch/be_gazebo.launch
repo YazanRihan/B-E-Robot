@@ -1,12 +1,15 @@
 <launch>
 	<arg name="base_name" default="p3dx_base"/>
-  <arg name="robot_position" default="-x 0.0 -y -0.5 -z 0.01 -R 0 -P 0 -Y +1.57" />
+  <arg name="robot_position" default="-x 0.0 -y -0.5 -z 0.189795 -R 0 -P 0 -Y -1.571593" />
   <arg name="arm_name" default="cyton1500_arm"/>
   <arg name="robot_name" default="be"/>
 
 	<!-- Gazebo  -->
   <include file="$(find gazebo_ros)/launch/empty_world.launch">
+  	<arg name="world_name" value="$(find be_gazebo)/world/fusion_demo.world"/>
   	<arg name="paused" value="false"/>
+  	<arg name="use_sim_time" value="true"/>
+
   </include>
 
   <!-- fused_bot in Gazebo -->
