@@ -10,6 +10,7 @@ find_package(catkin REQUIRED COMPONENTS
   xacro
   p3dx_robot
   p3dx_cyton1500_fusion
+  kinect_description
 )
 
 ## System dependencies are found with CMake's conventions
